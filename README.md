@@ -40,3 +40,9 @@ Add user-controlled brightness and contrast settings.
 Support multiple image formats.
 Build a simple interactive interface.
 Explore AI-based image enhancement techniques.
+
+## Results
+
+The following image compares the original photograph with the enhanced output.
+
+![Original and enhanced image comparison](comparison.jpg)
