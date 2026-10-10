@@ -11,7 +11,37 @@ Technologies
 Python
 OpenCV
 NumPy
-Installation
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/RicelB/image-enhancement-opencv.git
+cd image-enhancement-opencv
+```
+
+### 2. Create and activate a virtual environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install the dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Usage
+
+Place an image named `input.jpg` in the project folder, then run:
+
+```bash
+python enhance_image.py
+```
+
 Clone this repository.
 Create and activate a Python virtual environment.
 Install the required packages:
