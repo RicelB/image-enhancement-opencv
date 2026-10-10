@@ -35,11 +35,12 @@ Limitations
 
 The enhancement settings are fixed and may not work equally well for every image. Excessive brightness or contrast can reduce detail, and denoising may remove fine textures.
 
-Future Improvements
-Add user-controlled brightness and contrast settings.
-Support multiple image formats.
-Build a simple interactive interface.
-Explore AI-based image enhancement techniques.
+## Future Improvements
+
+- Add user-controlled brightness and contrast settings.
+- Support multiple image formats.
+- Build a simple interactive interface.
+- Explore AI-based image enhancement techniques.
 
 ## Results
 
