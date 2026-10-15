@@ -2,6 +2,12 @@ Image Enhancement with OpenCV
 
 A beginner-friendly Computer Vision project that applies traditional image-processing techniques using OpenCV and provides an interactive web application built with Streamlit.
 
+## Application Preview
+
+![Interactive Image Enhancement application](screenshots/app-review.png)
+
+## Features
+
 Users can adjust brightness and contrast, apply enhancement filters, compare original and processed images, and download their results.
 
 Features
