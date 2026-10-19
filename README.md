@@ -4,7 +4,7 @@ A beginner-friendly Computer Vision project that applies traditional image-proce
 
 ## Application Preview
 
-![Interactive Image Enhancement application](screenshots/app-review.png)
+![Interactive Image Enhancement application](screenshots/app-preview.png)
 
 ## Features
 
