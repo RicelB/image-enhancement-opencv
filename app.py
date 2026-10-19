@@ -2,6 +2,27 @@ import cv2
 import numpy as np
 import streamlit as st
 from streamlit_image_comparison import image_comparison
+def calculate_image_statistics(image):
+    """Calculate basic brightness and intensity statistics."""
+
+    # Convert the image to grayscale
+    grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Calculate average brightness
+    mean_brightness = np.mean(grayscale)
+
+    # Calculate intensity standard deviation
+    intensity_std = np.std(grayscale)
+
+    # Get image dimensions
+    height, width = grayscale.shape
+
+    return {
+        "Mean Brightness": round(float(mean_brightness), 2),
+        "Intensity Standard Deviation": round(float(intensity_std), 2),
+        "Width": width,
+        "Height": height,
+    }
 
 # Page configuration
 st.set_page_config(
@@ -147,6 +168,44 @@ if uploaded_file is not None:
         show_labels=True,
         make_responsive=True,
     )
+     # Display image statistics
+    st.divider()
+    st.subheader("Image Statistics")
+
+    # Convert RGB images to BGR for the statistics function
+    original_bgr = cv2.cvtColor(original_rgb, cv2.COLOR_RGB2BGR)
+    enhanced_bgr = cv2.cvtColor(enhanced_rgb, cv2.COLOR_RGB2BGR)
+
+    # Calculate statistics
+    original_stats = calculate_image_statistics(original_bgr)
+    enhanced_stats = calculate_image_statistics(enhanced_bgr)
+
+    # Display statistics side by side
+    stats_left, stats_right = st.columns(2)
+
+    with stats_left:
+        st.markdown("### Original Image")
+        st.write(f"Mean Brightness: {original_stats['Mean Brightness']}")
+        st.write(
+            "Intensity Standard Deviation: "
+            f"{original_stats['Intensity Standard Deviation']}"
+        )
+        st.write(
+            f"Dimensions: {original_stats['Width']} × "
+            f"{original_stats['Height']} pixels"
+        )
+
+    with stats_right:
+        st.markdown("### Enhanced Image")
+        st.write(f"Mean Brightness: {enhanced_stats['Mean Brightness']}")
+        st.write(
+            "Intensity Standard Deviation: "
+            f"{enhanced_stats['Intensity Standard Deviation']}"
+        )
+        st.write(
+            f"Dimensions: {enhanced_stats['Width']} × "
+            f"{enhanced_stats['Height']} pixels"
+        )
 
     # Display adjustment values
     st.write(f"Brightness: {brightness}")
